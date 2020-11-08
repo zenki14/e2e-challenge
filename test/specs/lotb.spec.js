@@ -32,4 +32,11 @@ describe('List of Tallest Buildings page', () => {
       const expected = "Empire State Building"
       expect(LotbPage.topResult.getText()).toEqual(expected)
     })
+
+    it('navigates to the Empire State Building wiki page', () => {
+      const actual = "https://en.wikipedia.org/wiki/Empire_State_Building"
+      LotbPage.firstBuilding()
+      browser.pause(1000)
+      expect(browser.getUrl()).toEqual(actual)
+    })
 })

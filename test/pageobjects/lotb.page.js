@@ -5,6 +5,7 @@ class LotbPage extends Page {
     get sortableTable () { return $('table.wikitable.sortable') }
     get sortClick () { return $('table.wikitable.sortable.jquery-tablesorter:nth-child(25) > thead:nth-child(1) > tr:nth-child(1) > th.headerSort:nth-child(8)') }
     get topResult () { return $('table.wikitable.sortable.jquery-tablesorter:nth-child(25) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(2)') }
+    get topResultLink () { return $('#mw-content-text > div.mw-parser-output > table:nth-child(25) > tbody > tr:nth-child(1) > td:nth-child(2) > b > a') }
     get topResultYear () { return $('#mw-content-text > div.mw-parser-output > table:nth-child(25) > tbody > tr:nth-child(1) > td:nth-child(9)') }
     get feet () { return $('table.wikitable.sortable.jquery-tablesorter:nth-child(25) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(7)') }
     get meters () { return $('table.wikitable.sortable.jquery-tablesorter:nth-child(25) > tbody:nth-child(2) > tr:nth-child(1) > td:nth-child(6)') }
@@ -33,7 +34,7 @@ class LotbPage extends Page {
     }
 
     firstBuilding () {
-        this.topResult.getText()
+        this.topResultLink.click()
     }
 }
 
