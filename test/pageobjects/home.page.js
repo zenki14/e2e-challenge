@@ -1,27 +1,15 @@
 import Page from './page'
 
-class FormPage extends Page {
+class HomePage extends Page {
     // Elements go here
     get searchInput () { return $('#searchInput') }
     get searchInputButton () { return $('#searchButton') }
-    get suggestionFirst () { return $$('span.highlight')[0] }
-    get suggestionSecond () { return $$('span.highlight')[1] }
+    get suggestionFirst () { return $('body > div.suggestions:nth-child(12) > div.suggestions-results:nth-child(1) > a.mw-searchSuggest-link:nth-child(1) > div.suggestions-result') }
+    get suggestionSecond () { return $('body > div.suggestions:nth-child(12) > div.suggestions-results:nth-child(1) > a.mw-searchSuggest-link:nth-child(2) > div.suggestions-result') }
 
     // Methods go here
     setSearchText (text) {
         this.searchInput.setValue(text)
-    }
-
-    getFirstSuggestion () {
-        this.suggestionFirst.getText()
-    }
-
-    getSecondSuggestion () {
-        this.suggestionSecond.getText()
-    }
-
-    clickFirstSuggestion () {
-        this.suggestionFirst.click()
     }
 
     search () {
@@ -29,4 +17,4 @@ class FormPage extends Page {
     }
 }
 
-export default new FormPage()
+export default new HomePage()
